@@ -107,9 +107,8 @@ $data = mysqli_fetch_array($sql);
                       <?php
                       $kontent = $data['isi_sub_standar'];
                       if ($kontent != "") { ?>
-                        <!-- <p id="isi-standar"><?php // echo $kontent; 
-                                                  ?></p> -->
-                        <embed src="uploads/<?php echo $kontent ?>" type="application/pdf" width="100%" height="700">
+                        <p id="isi-standar"><?php  echo $kontent; ?></p>
+                        <!-- <embed src="uploads/<?php //echo $kontent ?>" type="application/pdf" width="100%" height="700"> -->
                       <?php } else { ?>
                         <p style="height: 100px;" class="d-flex justify-content-center d-flex align-items-center" id="isi-standar">Data tidak ditemukan</p>
                       <?php } ?>
@@ -139,7 +138,7 @@ $data = mysqli_fetch_array($sql);
   $(function() {
     //Dropzone class
     var myDropzone = new Dropzone(".dropzone", {
-      url: "upload.php?sub_standar1=<?php echo $idSubStandart1; ?>",
+      url: "upload.php?standar=<?php echo $idStandart; ?>&sub_standar1=<?php echo $idSubStandart1; ?>",
       paramName: "file",
       maxFilesize: 2,
       maxFiles: 10,
