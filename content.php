@@ -40,6 +40,7 @@ if (isset($_POST['logout'])) {
   <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="styleCkeditor/style.css">
 
   <style>
     .submenuaktif {
@@ -293,18 +294,25 @@ if (isset($_POST['logout'])) {
 
   <!-- CKEditor -->
   <script src="ckeditor5-build-decoupled-document/ckeditor.js"></script>
+  <script src="https://cdn.ckeditor.com/4.17.1/full-all/ckeditor.js"></script>
+  
   <script>
+    
     DecoupledEditor
-      .create(document.querySelector('#editor'))
-      .then(editor => {
-        const toolbarContainer = document.querySelector('#toolbar-container');
+    .create( document.querySelector( '.document-editor__editable' ))
+    .then( editor => {
+        const toolbarContainer = document.querySelector( '.document-editor__toolbar' );
 
-        toolbarContainer.appendChild(editor.ui.view.toolbar.element);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+        toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+
+        window.editor = editor;
+    } )
+    .catch( err => {
+        console.error( err );
+    } );
   </script>
+
+  
 </body>
 
 </html>

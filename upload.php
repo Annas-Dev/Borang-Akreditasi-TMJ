@@ -16,7 +16,8 @@ $idUrut = isset($_GET['urut']) ? $_GET['urut'] : 0;
     // Insert file information in the database 
 
     $query = "INSERT INTO tb_lampiran (id_lampiran, id_sub_sub_sub_standar, id_sub_sub_standar,  id_sub_standar, id_standar, nama_lampiran, tipe_lampiran, ukuran_lampiran) 
-              VALUES ('', '$idSubStandar1', '$idSubStandar1', '$idSubStandar1', '$idSubStandar1', '$fileName', '$fileName', '1')";
+              VALUES ('', '', '', '', '', '$fileName', '$fileName', '')";
+              
     $insert = mysqli_query($conn, $query);
     if ($insert) {
       echo "<script>

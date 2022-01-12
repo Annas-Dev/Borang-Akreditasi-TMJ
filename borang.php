@@ -55,14 +55,9 @@ $data = mysqli_fetch_array($sql);
                     </div>
 
                     <div class="card-body">
-                      <!-- The toolbar will be rendered in this container. -->
-                      <div id="toolbar-container"></div>
-
-                      <!-- This container will become the editable. -->
-                      <div id="editor">
-                        <textarea name="isi"><?php echo $data['isi_sub_standar']; ?></textarea>
-                      </div>
+                        <textarea id="editor" name="editor"><?php echo $data['isi_sub_standar']; ?></textarea>
                     </div>
+                    
                     <div class="card-footer">
                       <input type="submit" name="simpan_borang" value="Simpan" class="btn btn-primary float-right">
                     </div>
@@ -136,6 +131,7 @@ $data = mysqli_fetch_array($sql);
 </body>
 <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="ckeditor/ckeditor.js"></script>
 <script>
   //Disabling autoDiscover
   Dropzone.autoDiscover = false;
@@ -157,22 +153,33 @@ $data = mysqli_fetch_array($sql);
   });
 </script>
 
+<script>
+  CKEDITOR.replace('editor');
+</script>
+
 </html>
 
 <?php
 if (isset($_POST['simpan_borang'])) {
-  $konten = $_POST['isi'];
+  $konten = $_POST['editor'];
   // masukkan data ke database
-  $query = "UPDATE tb_sub_standar set isi_sub_standar = '$konten' WHERE id_sub_standar=$idSubStandart1";
-  $update = mysqli_query($conn, $query);
-  if ($update) {
-    echo "<script>
+  if ($konten != "") {
+    $query = "UPDATE tb_sub_standar set isi_sub_standar = '$konten' WHERE id_sub_standar=$idSubStandart1";
+    $update = mysqli_query($conn, $query);
+    if ($update) {
+      echo "<script>
           alert('Data berhasil di simpan');
           window.location.href = 'content.php?mod=borang&standar=$idStandart&sub_standar1=$idSubStandart1&urut=$idUrut';
         </script>";
+    } else {
+      echo "<script>
+          alert('Data Gagal di simpan');
+          window.location.href = 'content.php?mod=borang&standar=$idStandart&sub_standar1=$idSubStandart1&urut=$idUrut';
+        </script>";
+    }
   } else {
     echo "<script>
-          alert('Data Gagal di simpan');
+          alert('tidak');
           window.location.href = 'content.php?mod=borang&standar=$idStandart&sub_standar1=$idSubStandart1&urut=$idUrut';
         </script>";
   }
