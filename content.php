@@ -294,7 +294,7 @@ if (isset($_POST['logout'])) {
 
   <!-- CKEditor -->
   <script src="ckeditor5-build-decoupled-document/ckeditor.js"></script>
-  <script src="https://cdn.ckeditor.com/4.17.1/full-all/ckeditor.js"></script>
+  
   
   <script>
     
