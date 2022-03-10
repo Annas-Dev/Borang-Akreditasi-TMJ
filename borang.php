@@ -81,7 +81,7 @@ $data = mysqli_fetch_array($sql);
                         <div class="btn-group w-100 float-right">
                           <button type="submit" class="btn btn-primary col start" id="startUpload">
                             <i class="fas fa-upload"></i>
-                            <span>Start upload</span>
+                            <span>Start upload</span> 
                           </button>
                           <button type="reset" class="btn btn-warning col cancel">
                             <i class="fas fa-times-circle"></i>
