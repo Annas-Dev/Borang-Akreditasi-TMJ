@@ -1,6 +1,6 @@
 <?php 
 
-$conn = mysqli_connect("localhost", "root", "", "borang_tmj");
+$conn = mysqli_connect("localhost", "root", "", "borang_tmj", 33060);
 
 function query($query)
 {

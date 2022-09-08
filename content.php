@@ -152,7 +152,7 @@ if (isset($_POST['logout'])) {
           </li>
 
           <!-- CONTENT ISI BORANG  -->
-          <li class="nav-header">ISI BORANG</li>
+          <li class="nav-header">Laporan Evaluasi Diri</li>
 
           <?php
           $stadarAktif = isset($_GET['standar']) ? $_GET['standar'] : 0;
@@ -169,7 +169,7 @@ if (isset($_POST['logout'])) {
                 <i class="nav-icon fas fa-briefcase"></i>
                 <!-- STANDAR 1 MENU  -->
                 <p id="id">
-                  Standar <?= $std['id_standar'] ?>
+                  Kriteria <?= $std['id_standar'] ?>
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
@@ -188,11 +188,11 @@ if (isset($_POST['logout'])) {
                     <?php
                     if ($idSubstandar1 == $idSubAktif) { ?>
                       <a href="content.php?mod=borang&standar=<?php echo $idStandar; ?>&sub_standar1=<?php echo $idSubstandar1; ?>&urut=<?php echo $j; ?>" class="nav-link submenuaktif">
-                        <i class="nav-icon"><?php echo $std['id_standar'] . " . " ?><?php echo $j; ?></i>
+                        <i class="nav-icon">C.<?php echo $std['id_standar'] . " . " ?><?php echo $j; ?> <?php echo $sub_std['nm_sub_standar'] ?></i>
                       </a>
                     <?php } else { ?>
                       <a href="content.php?mod=borang&standar=<?php echo $idStandar; ?>&sub_standar1=<?php echo $idSubstandar1; ?>&urut=<?php echo $j; ?>" class="nav-link">
-                        <i class="nav-icon"><?php echo $std['id_standar'] . " . " ?><?php echo $j; ?></i>
+                        <i class="nav-icon">C.<?php echo $std['id_standar'] . " . " ?><?php echo $j; ?> <?php echo $sub_std['nm_sub_standar'] ?></i>
                       </a>
                     <?php } ?>
                   </li>
@@ -294,25 +294,24 @@ if (isset($_POST['logout'])) {
 
   <!-- CKEditor -->
   <script src="ckeditor5-build-decoupled-document/ckeditor.js"></script>
-  
-  
-  <script>
-    
-    DecoupledEditor
-    .create( document.querySelector( '.document-editor__editable' ))
-    .then( editor => {
-        const toolbarContainer = document.querySelector( '.document-editor__toolbar' );
 
-        toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+
+  <script>
+    DecoupledEditor
+      .create(document.querySelector('.document-editor__editable'))
+      .then(editor => {
+        const toolbarContainer = document.querySelector('.document-editor__toolbar');
+
+        toolbarContainer.appendChild(editor.ui.view.toolbar.element);
 
         window.editor = editor;
-    } )
-    .catch( err => {
-        console.error( err );
-    } );
+      })
+      .catch(err => {
+        console.error(err);
+      });
   </script>
 
-  
+
 </body>
 
 </html>

@@ -8,7 +8,7 @@ if (!empty($_FILES)) {
   $idUrut = isset($_GET['urut']) ? $_GET['urut'] : 0;
   // File path configuration 
   
-  $uploadDir = "DataPendukung/"."Standar"."$idStandart/$idSubStandart1/";
+  $uploadDir = "DataPendukung/"."Kriteria"."$idStandart/$idUrut/";
   if (!is_dir($uploadDir)) {
     mkdir($uploadDir, 0777, true);
   }

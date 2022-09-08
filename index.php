@@ -142,16 +142,73 @@ if (isset($_POST['logout'])) {
             </a>
           </li>
 
-          <!-- CONTENT DATA PENDUKUNG -->
-          <li class="nav-header">DATA PENDUKUNG</li>
+          <!-- CONTENT ISI BORANG  -->
+          <li class="nav-header">Laporan Evaluasi Diri</li>
 
-          <!-- PRFILE TMJ -->
-          <li class="nav-item bottom">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-graduation-cap"></i>
-              <p>Profil TMJ</p>
-            </a>
-          </li>
+          <?php
+          $stadarAktif = isset($_GET['standar']) ? $_GET['standar'] : 0;
+          $standar = mysqli_query($conn, "SELECT * FROM tb_standar;");
+          $i = 1;
+          while ($std = mysqli_fetch_array($standar)) {
+            if ($stadarAktif == $std['id_standar']) { ?>
+              <li class="nav-item menu-is-opening menu-open">
+              <?php } else { ?>
+              <li class="nav-item">
+              <?php } ?>
+
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-briefcase"></i>
+                <!-- STANDAR 1 MENU  -->
+                <p id="id">
+                  Kriteria <?= $std['id_standar'] ?>
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+
+              <ul class="nav nav-treeview">
+                <?php
+                $idStandar = $std['id_standar'];
+                $sub_standar = mysqli_query($conn, "SELECT * FROM tb_sub_standar WHERE id_standar = $idStandar");
+                $j = 1;
+                $idSubAktif = isset($_GET['sub_standar1']) ? $_GET['sub_standar1'] : 0;
+                while ($sub_std = mysqli_fetch_array($sub_standar)) {
+                  $idSubstandar1 = $sub_std['id_sub_standar'];
+                ?>
+                  <!-- SUB MENU STANDAR 1.1 -->
+                  <li class="nav-item submenu" id="sub_std">
+                    <?php
+                    if ($idSubstandar1 == $idSubAktif) { ?>
+                      <a href="content.php?mod=borang&standar=<?php echo $idStandar; ?>&sub_standar1=<?php echo $idSubstandar1; ?>&urut=<?php echo $j; ?>" class="nav-link submenuaktif">
+                        <i class="nav-icon">C.<?php echo $std['id_standar'] . " . " ?><?php echo $j; ?> <?php echo $sub_std['nm_sub_standar'] ?></i>
+                      </a>
+                    <?php } else { ?>
+                      <a href="content.php?mod=borang&standar=<?php echo $idStandar; ?>&sub_standar1=<?php echo $idSubstandar1; ?>&urut=<?php echo $j; ?>" class="nav-link">
+                        <i class="nav-icon">C.<?php echo $std['id_standar'] . " . " ?><?php echo $j; ?> <?php echo $sub_std['nm_sub_standar'] ?></i>
+                      </a>
+                    <?php } ?>
+                  </li>
+                <?php $j++;
+                }
+
+                ?>
+
+              </ul>
+              </li>
+            <?php $i++;
+          }
+
+            ?>
+
+            <!-- CONTENT DATA PENDUKUNG -->
+            <li class="nav-header">DATA PENDUKUNG</li>
+
+            <!-- PRFILE TMJ -->
+            <li class="nav-item bottom">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-graduation-cap"></i>
+                <p>Profil TMJ</p>
+              </a>
+            </li>
         </ul>
         <!-- /.NAVIGASI MENU -->
       </nav>
