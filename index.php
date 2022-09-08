@@ -56,7 +56,7 @@ if (isset($_POST['logout'])) {
     <ul class="navbar-nav ml-auto">
 
       <!-- SEARCH FORM -->
-      <form class="form-inline ml-3">
+      <!-- <form class="form-inline ml-3">
         <div class="input-group input-group-sm">
           <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
@@ -65,7 +65,7 @@ if (isset($_POST['logout'])) {
             </button>
           </div>
         </div>
-      </form>
+      </form> -->
 
       <!-- FULL SCREEN BUTTON -->
       <li class="nav-item">
@@ -84,11 +84,6 @@ if (isset($_POST['logout'])) {
               <i class="nav-icon fas fa-sign-in-alt"></i>
             </button>
           </form>
-        <?php
-        } else { ?>
-          <a class="nav-link" href="login.php" role="button">
-            <i class="nav-icon fas fa-sign-in-alt" name="logout"></i>
-          </a>
         <?php
         }
         ?>
@@ -226,7 +221,8 @@ if (isset($_POST['logout'])) {
       <div class="container-fluid">
         <!-- CONTAINER CONTENT -->
 
-        <h1 style="text-align: center; padding-top: 40px; padding-bottom: 10px;">Selamat Datang Di Sitebot</h1>
+        <h1 style="text-align: center; padding-top: 40px;  font-weight: bold;">Selamat Datang Di Sitebot</h1>
+        <h4 style="text-align: center;  padding-bottom: 10px; font-weight: 500;">(Website Borang Teknik Multimedia dan Jaringan)</h4>
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="padding: 20px 0px 20px 0px;">
           <ol class="carousel-indicators">
@@ -236,9 +232,9 @@ if (isset($_POST['logout'])) {
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="img/kp2.png" alt="First slide">
+              <img class="d-block w-100" src="img/img2.png" alt="First slide">
               <div class="carousel-caption d-none d-md-block">
-                <h1 style="text-align: left; position: relative; left: -15%;">BORANG</h1>
+                <h1 style="text-align: left; position: relative; left: -15%;">BORANG PRODI</h1>
                 <h1 style="text-align: left; position: relative; left: -15%;">TEKNIK MULTIMEDIA DAN JARINGAN</h1>
                 <H5 style="text-align: left; position: relative; left: -15%;">POLITEKNIK NEGERI UJUNG PANDANG</H5>
               </div>
@@ -246,15 +242,15 @@ if (isset($_POST['logout'])) {
             <div class="carousel-item">
               <img class="d-block w-100" src="img/kp2.png" alt="Second slide">
               <div class="carousel-caption d-none d-md-block">
-                <h1 style="text-align: left; position: relative; left: -15%;">BORANG</h1>
+                <h1 style="text-align: left; position: relative; left: -15%;">BORANG PRODI</h1>
                 <h1 style="text-align: left; position: relative; left: -15%;">TEKNIK MULTIMEDIA DAN JARINGAN</h1>
                 <H5 style="text-align: left; position: relative; left: -15%;">POLITEKNIK NEGERI UJUNG PANDANG</H5>
               </div>
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="img/kp2.png" alt="Third slide">
+              <img class="d-block w-100" src="img/img1.png" alt="Third slide">
               <div class="carousel-caption d-none d-md-block">
-                <h1 style="text-align: left; position: relative; left: -15%;">BORANG</h1>
+                <h1 style="text-align: left; position: relative; left: -15%;">BORANG PRODI</h1>
                 <h1 style="text-align: left; position: relative; left: -15%;">TEKNIK MULTIMEDIA DAN JARINGAN</h1>
                 <H5 style="text-align: left; position: relative; left: -15%;">POLITEKNIK NEGERI UJUNG PANDANG</H5>
               </div>
@@ -262,7 +258,7 @@ if (isset($_POST['logout'])) {
           </div>
         </div>
 
-        <h6 style="text-align: center; padding-top: 1%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi suscipit maiores, repudiandae aspernatur accusamus vero facilis ullam et perspiciatis quam, dignissimos accusantium necessitatibus nesciunt exercitationem, at optio id Officia, obcaecati.</h6>
+        <h6 style="text-align: center; padding-top: 1%;">Teknik Multimedia dan Jaringan merupakan program studi yang berada dibawah naungan Jurusan Teknik Elektro Politeknik Negeri Ujung Pandang. Website Borang TMJ ini berguna untuk penginputan data borang akreditasi program studi ini.</h6>
 
         <h1 style="text-align: center; padding: 4% 0% 3% 0%;">9 Standar Kriteria Penilaian</h1>
 
@@ -312,7 +308,7 @@ if (isset($_POST['logout'])) {
 
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-      <b>Version</b> 1.0.0
+      <b>Version</b> 3.1.0-pre
     </div>
     <strong>Copyright &copy; TMJ 2020-2025 <a href="index.php">SITEBOT</a>.</strong> All rights reserved.
   </footer>

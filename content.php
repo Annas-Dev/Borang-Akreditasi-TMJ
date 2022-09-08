@@ -66,7 +66,7 @@ if (isset($_POST['logout'])) {
     <ul class="navbar-nav ml-auto">
 
       <!-- SEARCH FORM -->
-      <form class="form-inline ml-3">
+      <!-- <form class="form-inline ml-3">
         <div class="input-group input-group-sm">
           <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
@@ -75,7 +75,7 @@ if (isset($_POST['logout'])) {
             </button>
           </div>
         </div>
-      </form>
+      </form> -->
 
       <!-- FULL SCREEN BUTTON -->
       <li class="nav-item">
@@ -95,12 +95,7 @@ if (isset($_POST['logout'])) {
             </button>
           </form>
         <?php
-        } else { ?>
-          <a class="nav-link" href="login.php" role="button">
-            <i class="nav-icon fas fa-sign-in-alt" name="logout"></i>
-          </a>
-        <?php
-        }
+        } 
         ?>
       </li>
     </ul>
@@ -210,15 +205,15 @@ if (isset($_POST['logout'])) {
 
 
             <!-- CONTENT DATA PENDUKUNG -->
-            <li class="nav-header">DATA PENDUKUNG</li>
+            <!-- <li class="nav-header">DATA PENDUKUNG</li> -->
 
             <!-- PRFILE TMJ -->
-            <li class="nav-item bottom">
+            <!-- <li class="nav-item bottom">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-graduation-cap"></i>
                 <p>Profil TMJ</p>
               </a>
-            </li>
+            </li> -->
         </ul>
         <!-- /.NAVIGASI MENU -->
       </nav>
